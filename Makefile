@@ -23,7 +23,7 @@ CXXFLAGS=
 .c.o:
 	$(CC) -c $(CFLAGS) $*.c
 
-all: prime math sub1 sub2 sub3 sub4 sub5 sub6 ex01 ex02 memex dmaxt asm_io.o fprime quadt test_big_int
+all: prime math sub1 sub2 sub3 sub4 sub5 sub6 ex01 ex02 ex03 memex dmaxt asm_io.o fprime quadt test_big_int
 
 prime: driver.o prime.o asm_io.o
 	$(CC) $(CFLAGS) -oprime driver.o prime.o asm_io.o
@@ -36,6 +36,9 @@ ex01 : driver.o ex01.o asm_io.o
 
 ex02 : driver.o ex02.o asm_io.o
 	$(CC) $(CFLAGS) -oex02 driver.o ex02.o asm_io.o
+
+ex03 : driver.o ex03.o asm_io.o
+	$(CC) $(CFLAGS) -oex03 driver.o ex03.o asm_io.o
 
 sub1 : driver.o sub1.o asm_io.o
 	$(CC) $(CFLAGS) -osub1 driver.o sub1.o asm_io.o
@@ -87,6 +90,8 @@ ex01.o : asm_io.inc ex01.asm
 
 ex02.o : asm_io.inc ex02.asm
 
+ex03.o : asm_io.inc ex03.asm
+
 sub1.o : asm_io.inc
 
 sub2.o : asm_io.inc
@@ -103,4 +108,5 @@ driver.o : driver.c
 clean :
 	rm *.o
 	rm dmaxt ex01 fprime math memex prime quadt ex02 \
-		sub1 sub2 sub3 sub4 sub5 sub6 test_big_int
+		sub1 sub2 sub3 sub4 sub5 sub6 test_big_int \
+		ex03
