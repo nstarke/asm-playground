@@ -34,5 +34,11 @@ ex05: ex05.o
 ex05.o:
 	nasm -f elf -g -F stabs ex05.asm -l ex05.lst
 
+ex06: ex06.o
+	ld -o ex06 ex06.o
+
+ex06.o:
+	nasm -f elf -g -F stabs ex06.asm -l ex06.lst
+
 clean:
-	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05
+	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05 ex06
