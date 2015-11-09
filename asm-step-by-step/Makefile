@@ -40,5 +40,19 @@ ex06: ex06.o
 ex06.o:
 	nasm -f elf -g -F stabs ex06.asm -l ex06.lst
 
+eatsyscall: eatsyscall.o
+	ld -o eatsyscall eatsyscall.o
+
+eatsyscall.o:
+	nasm -f elf -g -F stabs eatsyscall.asm
+
+uppercaser: uppercaser.o
+	ld -o uppercaser uppercaser.o
+
+uppercaser:
+	nasm -f elf -g -F stabs uppercaser.asm
 clean:
-	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05 ex06
+	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05 ex06 \
+		eatsyscall uppercaser
+
+all: ex01 ex02 ex03 ex04 ex05 ex06 eatsyscall uppercaser

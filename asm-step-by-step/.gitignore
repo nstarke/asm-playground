@@ -6,5 +6,6 @@ ex05
 ex06
 sandbox
 eatsyscall
+uppercaser
 *.lst
 *.o
