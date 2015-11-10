@@ -49,8 +49,9 @@ eatsyscall.o:
 uppercaser: uppercaser.o
 	ld -o uppercaser uppercaser.o
 
-uppercaser:
+uppercaser.o:
 	nasm -f elf -g -F stabs uppercaser.asm
+
 clean:
 	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05 ex06 \
 		eatsyscall uppercaser

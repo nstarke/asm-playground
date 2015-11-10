@@ -48,5 +48,5 @@ Write:
 
 Exit:
     mov     eax,1           ; code for exit syscall
-    mov     ebx,1           ; return a code of zero to Linx
+    mov     ebx,0           ; return a code of zero to Linx
     int     80h
