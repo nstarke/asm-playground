@@ -52,8 +52,15 @@ uppercaser: uppercaser.o
 uppercaser.o:
 	nasm -f elf -g -F stabs uppercaser.asm
 
+uppercaser2: uppercaser2.o
+	ld -o uppercaser2 uppercaser2.o
+
+uppercaser2.o:
+	nasm -f elf -g -F stabs uppercaser2.asm
+
 clean:
 	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05 ex06 \
-		eatsyscall uppercaser
+		eatsyscall uppercaser uppercaser2
 
-all: ex01 ex02 ex03 ex04 ex05 ex06 eatsyscall uppercaser
+all: ex01 ex02 ex03 ex04 ex05 ex06 eatsyscall uppercaser \
+	uppercaser2
