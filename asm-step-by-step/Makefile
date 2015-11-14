@@ -58,9 +58,15 @@ uppercaser2: uppercaser2.o
 uppercaser2.o:
 	nasm -f elf -g -F stabs uppercaser2.asm
 
+hexdump: hexdump.o
+	ld -o hexdump hexdump.o
+
+hexdump.o:
+	nasm -f elf -g -F stabs hexdump.asm
+
 clean:
-	rm *.o *.lst sandbox ex01 ex02 ex03 ex04 ex05 ex06 \
-		eatsyscall uppercaser uppercaser2
+	rm *.o *.lst ex01 ex02 ex03 ex04 ex05 ex06 \
+		eatsyscall uppercaser uppercaser2 hexdump
 
 all: ex01 ex02 ex03 ex04 ex05 ex06 eatsyscall uppercaser \
-	uppercaser2
+	uppercaser2 hexdump

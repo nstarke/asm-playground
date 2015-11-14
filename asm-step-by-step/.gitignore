@@ -8,5 +8,6 @@ sandbox
 eatsyscall
 uppercaser
 uppercaser2
+hexdump
 *.lst
 *.o
